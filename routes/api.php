@@ -9,7 +9,7 @@ Route::group(['middleware'=>'api'], function(){
     return Contact::latest()->orderBy('created_at', 'desc')->get();
   });
   //get single contact
-  Route::get('contact/{id}', function(){
+  Route::get('contact/{id}', function($id){
     return Contact::findOrFail($id);
   });
   //add contact
